@@ -67,9 +67,9 @@ let nextConfig = {
   async rewrites() {
     return {
       beforeFiles: [
-        { source: '/atom.xml', destination: '/feed' },
-        { source: '/feed.xml', destination: '/feed' },
-        { source: '/sitemap.xml', destination: '/sitemap' },
+        { source: '/atom.xml', destination: 'https://mixspace.internal.qxazusa.xyz/feed' },
+        { source: '/feed.xml', destination: 'https://mixspace.internal.qxazusa.xyz/feed' },
+        { source: '/sitemap.xml', destination: 'https://mixspace.internal.qxazusa.xyz/sitemap' },
       ],
     }
   },
