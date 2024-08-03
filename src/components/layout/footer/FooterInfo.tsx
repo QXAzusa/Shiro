@@ -175,7 +175,7 @@ const FooterBottom = async () => {
   const footerConfig = footer || {}
   const { otherInfo } = footerConfig
   const currentYear = new Date().getFullYear().toString()
-  const { date = currentYear, icp } = otherInfo || {}
+  const { date = currentYear, icp, cyperpolice } = otherInfo || {}
 
   return (
     <div className="mt-12 space-y-3 text-center md:mt-6 md:text-left">
@@ -211,6 +211,14 @@ const FooterBottom = async () => {
             <Divider className="hidden md:inline" />
             <StyledLink href={icp.link} target="_blank" rel="noreferrer">
               {icp.text}
+            </StyledLink>
+            <Divider className="hidden md:inline" />
+            <StyledLink
+              href={cyperpolice.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {cyperpolice.text}
             </StyledLink>
           </>
         )}
