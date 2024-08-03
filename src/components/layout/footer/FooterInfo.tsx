@@ -175,7 +175,7 @@ const FooterBottom = async () => {
   const footerConfig = footer || {}
   const { otherInfo } = footerConfig
   const currentYear = new Date().getFullYear().toString()
-  const { date = currentYear, icp, cyperpolice } = otherInfo || {}
+  const { date = currentYear, icp } = otherInfo || {}
 
   return (
     <div className="mt-12 space-y-3 text-center md:mt-6 md:text-left">
@@ -214,11 +214,11 @@ const FooterBottom = async () => {
             </StyledLink>
             <Divider className="hidden md:inline" />
             <StyledLink
-              href={cyperpolice.link}
+              href="https://beian.mps.gov.cn/#/query/webSearch?code=32081202000264"
               target="_blank"
               rel="noreferrer"
             >
-              {cyperpolice.text}
+              苏公网安备 32081202000264号
             </StyledLink>
           </>
         )}

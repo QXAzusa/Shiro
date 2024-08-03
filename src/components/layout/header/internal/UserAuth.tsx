@@ -5,16 +5,10 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-import { dark } from '@clerk/themes/dist/themes/src/themes/dark'
-
 import { useIsLogged } from '~/atoms/hooks'
-import { UserArrowLeftIcon } from '~/components/icons/user-arrow-left'
 import { MotionButtonBase } from '~/components/ui/button'
 import { useIsDark } from '~/hooks/common/use-is-dark'
-import { urlBuilder } from '~/lib/url-builder'
 import { useAggregationSelector } from '~/providers/root/aggregation-data-provider'
-
-import { HeaderActionButton } from './HeaderActionButton'
 
 const SignedIn = dynamic(() =>
   import('@clerk/nextjs').then((mod) => mod.SignedIn),
@@ -66,45 +60,5 @@ export function UserAuth() {
     return <OwnerAvatar />
   }
 
-  return (
-    <AnimatePresence>
-      <SignedIn key="user-info">
-        <div className="pointer-events-auto flex h-10 w-full items-center justify-center">
-          <div className="relative">
-            <UserButton
-              afterSignOutUrl={urlBuilder(pathname).href}
-              userProfileProps={{
-                appearance: {
-                  baseTheme: isDark ? dark : undefined,
-                },
-              }}
-              appearance={{
-                elements: {
-                  userButtonAvatarBox:
-                    'w-[36px] h-[36px] ring-2 ring-white/20 rounded-full',
-                },
-                baseTheme: isDark ? dark : undefined,
-              }}
-            />
-            <UserAuthFromIcon className="absolute bottom-0 right-0" />
-          </div>
-        </div>
-      </SignedIn>
-
-      <SignedOut key="sign-in">
-        <TriggerComponent />
-      </SignedOut>
-    </AnimatePresence>
-  )
-}
-
-const TriggerComponent = () => {
-  const pathname = usePathname()
-  return (
-    <SignInButton mode="modal" fallbackRedirectUrl={urlBuilder(pathname).href}>
-      <HeaderActionButton aria-label="Guest Login">
-        <UserArrowLeftIcon className="size-4" />
-      </HeaderActionButton>
-    </SignInButton>
-  )
+  return <AnimatePresence></AnimatePresence>
 }
