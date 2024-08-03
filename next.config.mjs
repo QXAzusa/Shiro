@@ -63,13 +63,26 @@ let nextConfig = {
     contentSecurityPolicy:
       "default-src 'self'; script-src 'none'; sandbox; style-src 'unsafe-inline';",
   },
-
+  redirects: async () => {
+    return [
+      {
+        source: "/atom.xml",
+        destination: "https://mixspace.internal.qxazusa.xyz/feed",
+        permanent: false,
+      },{
+        source: "/feed.xml",
+        destination: "https://mixspace.internal.qxazusa.xyz/feed",
+        permanent: false,
+      },{
+        source: "/sitemap.xml",
+        destination: "https://mixspace.internal.qxazusa.xyz/sitemap",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return {
       beforeFiles: [
-        { source: '/atom.xml', destination: 'https://mixspace.internal.qxazusa.xyz/feed' },
-        { source: '/feed.xml', destination: 'https://mixspace.internal.qxazusa.xyz/feed' },
-        { source: '/sitemap.xml', destination: 'https://mixspace.internal.qxazusa.xyz/sitemap' },
       ],
     }
   },
