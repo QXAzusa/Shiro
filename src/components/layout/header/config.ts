@@ -3,14 +3,11 @@ import type { ReactNode } from 'react'
 
 import {
   FaSolidCircle,
-  FaSolidCircleNotch,
-  FaSolidComments,
   FaSolidDotCircle,
   FaSolidFeatherAlt,
   FaSolidHistory,
   IcTwotoneSignpost,
   IonBook,
-  MdiLightbulbOn20,
 } from '~/components/icons/menu-collection'
 
 export interface IHeaderMenu {
@@ -43,9 +40,15 @@ export const headerMenuConfig: IHeaderMenu[] = [
     icon: h(FaSolidFeatherAlt),
     exclude: ['/notes/topics'],
   },
-
   {
-    title: '时光',
+    title: '专栏',
+    path: '/notes/topics',
+    icon: h('i', {
+      className: 'icon-[mingcute--align-bottom-fill] flex center',
+    }),
+  },
+  {
+    title: '时间线',
     icon: h(FaSolidHistory),
     path: '/timeline',
     subMenu: [
@@ -63,30 +66,6 @@ export const headerMenuConfig: IHeaderMenu[] = [
         title: '回忆',
         icon: h(FaSolidCircle),
         path: '/timeline?memory=1',
-      },
-      {
-        title: '专栏',
-        path: '/notes/topics',
-        icon: h('i', {
-          className: 'icon-[mingcute--align-bottom-fill] flex center',
-        }),
-      },
-    ],
-  },
-  {
-    title: '更多',
-    icon: h(FaSolidCircleNotch),
-    path: '#',
-    subMenu: [
-      {
-        title: '思考',
-        icon: h(MdiLightbulbOn20),
-        path: '/thinking',
-      },
-      {
-        title: '一言',
-        path: '/says',
-        icon: h(FaSolidComments),
       },
     ],
   },
