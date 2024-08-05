@@ -193,11 +193,12 @@ const FooterBottom = async () => {
           >
             RSS
           </a>
-          <Divider />
+          <Divider className="hidden" />
           <a
             href="https://mixspace.internal.qxazusa.xyz/sitemap.xml"
             target="_blank"
             rel="noreferrer"
+            className="hidden"
           >
             站点地图
           </a>
