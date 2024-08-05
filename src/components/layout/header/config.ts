@@ -8,12 +8,9 @@ import {
   FaSolidDotCircle,
   FaSolidFeatherAlt,
   FaSolidHistory,
-  FaSolidUserFriends,
   IcTwotoneSignpost,
   IonBook,
-  MdiFlask,
   MdiLightbulbOn20,
-  RMixPlanet,
 } from '~/components/icons/menu-collection'
 
 export interface IHeaderMenu {
@@ -77,12 +74,6 @@ export const headerMenuConfig: IHeaderMenu[] = [
     ],
   },
   {
-    title: '友链',
-    icon: h(FaSolidUserFriends),
-    path: '/friends',
-  },
-
-  {
     title: '更多',
     icon: h(FaSolidCircleNotch),
     path: '#',
@@ -93,19 +84,9 @@ export const headerMenuConfig: IHeaderMenu[] = [
         path: '/thinking',
       },
       {
-        title: '项目',
-        icon: h(MdiFlask),
-        path: '/projects',
-      },
-      {
         title: '一言',
         path: '/says',
         icon: h(FaSolidComments),
-      },
-      {
-        title: '跃迁',
-        icon: h(RMixPlanet),
-        path: 'https://travel.moe/go.html',
       },
     ],
   },
