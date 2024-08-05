@@ -183,13 +183,14 @@ const FooterBottom = async () => {
         <a href="/">
           <OwnerName />
         </a>
-        <span>.</span>
+        <span></span>
         <span>
-          <Divider />
+          <Divider className="hidden" />
           <a
             href="https://mixspace.internal.qxazusa.xyz/feed"
             target="_blank"
             rel="noreferrer"
+            className="hidden"
           >
             RSS
           </a>
