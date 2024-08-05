@@ -4,7 +4,6 @@ import type { FooterConfig } from './config'
 
 import { fetchAggregationData } from '~/app/(app)/api'
 import { IonIosArrowDown } from '~/components/icons/arrow'
-import { SubscribeTextButton } from '~/components/modules/subscribe/SubscribeTextButton'
 import { FloatPopover } from '~/components/ui/float-popover'
 import { MLink } from '~/components/ui/link'
 import { clsxm } from '~/lib/helper'
@@ -203,13 +202,13 @@ const FooterBottom = async () => {
             站点地图
           </a>
           <Divider className="inline" />
-
-          <SubscribeTextButton>
-            <Divider className="hidden md:inline" />
-          </SubscribeTextButton>
-        </span>
-        <span className="mt-3 block md:mt-0 md:inline">
-          Stay hungry. Stay foolish.
+          <StyledLink
+            href="https://icp.gov.moe/?keyword=20220417"
+            target="_blank"
+            rel="noreferrer"
+          >
+            萌ICP备20220417号
+          </StyledLink>
         </span>
       </p>
       <div>
@@ -227,14 +226,6 @@ const FooterBottom = async () => {
               rel="noreferrer"
             >
               苏公网安备 32081202000264号
-            </StyledLink>
-            <Divider className="md:inline" />
-            <StyledLink
-              href="https://icp.gov.moe/?keyword=20220417"
-              target="_blank"
-              rel="noreferrer"
-            >
-              萌ICP备20220417号
             </StyledLink>
           </>
         )}
