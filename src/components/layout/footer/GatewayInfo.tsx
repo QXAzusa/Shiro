@@ -105,7 +105,7 @@ export const GatewayInfo = () => {
             <span>
               <NumberSmoothTransition>{count}</NumberSmoothTransition>
             </span>{' '}
-            人看爆
+            人浏览
           </span>
         }
       >
